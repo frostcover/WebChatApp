@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Chatbox</title>
+	<link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+
+	<div class ="chatbox">
+
+		<div class ="chatlogs">
+
+			<div class ="chat friend">
+				<div class ="user_photo"><img src="img/friend.jpg"></div>
+				<p class="chat_message">Hii Vishal!!</p>
+			</div>
+			<div class ="chat self">
+				<div class ="user_photo"><img src="img/self.jpeg"></div>
+				<p class="chat_message">Hii Bro</p>
+			</div>
+
+			<div class ="chat friend">
+				<div class ="user_photo"><img src="../img/friend.jpg"></div>
+				<p class="chat_message">What's up, Bro!!</p>
+			</div>
+			<div class ="chat self">
+				<div class ="user_photo"><img src="img/self.jpeg"></div>
+				<p class="chat_message">What's up!!</p>
+			</div>
+
+			<div class ="chat friend">
+				<div class ="user_photo"><img src="img/friend.jpg"></div>
+				<p class="chat_message">What's up, Bro!!</p>
+			</div>
+			<div class ="chat self">
+				<div class ="user_photo"><img src="img/self.jpeg"></div>
+				<p class="chat_message">What's up!!</p>
+			</div>
+
+			<div class ="chat friend">
+				<div class ="user_photo"><img src="img/friend.jpg"></div>
+				<p class="chat_message">What's up, Bro!!</p>
+			</div>
+			<div class ="chat self">
+				<div class ="user_photo"><img src="img/self.jpeg"></div>
+				<p class="chat_message">What's up!!</p>
+			</div>
+
+			<div class ="chat friend">
+				<div class ="user_photo"><img src="img/friend.jpg"></div>
+				<p class="chat_message">What's up, Bro!!</p>
+			</div>
+			<div class ="chat self">
+				<div class ="user_photo"><img src="img/self.jpeg"></div>
+				<p class="chat_message">What's up!!</p>
+			</div>
+		
+		</div>
+
+		<div class="chat_form">
+			<textarea placeholder="Enter your Message" id = 'theMsg'></textarea>
+			<button>Send</button>
+		</div>
+	</div>
+
+
+	<script src = "http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src = "https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+	<script>
+		jQuery(function($){
+			var socket = io.connect();
+			var $messageForm = $('#chatlogs');
+			var $messagebox = $('#theMsg');
+			var $chat = $('#chat');
+
+			$messageForm.submit(function(e){
+				e.preventDefault();
+				socket.emit('send message',$messagebox.val());
+				$messagebox.val('');
+			});
+
+		});
+	</script>
+</body>
+</html>
