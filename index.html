@@ -1,85 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>My Chatbox</title>
-	<link rel="stylesheet" type="text/css" href="/style.css">
-</head>
-<body>
 
-	<div class ="chatbox">
+    <head>
+        <title>Chat Application</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link rel="icon" type="image/png" href="favicon.png">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">   
+    </head>
 
-		<div class ="chatlogs">
+    <body>
+    	<div class ="header">
+    		<div class="logo">
+    			<span style = "font-weight: 300">Web Chat</span>
+    		</div>
+    	</div>
 
-			<div class ="chat friend">
-				<div class ="user_photo"><img src="img/friend.jpg"></div>
-				<p class="chat_message">Hii Vishal!!</p>
-			</div>
-			<div class ="chat self">
-				<div class ="user_photo"><img src="img/self.jpeg"></div>
-				<p class="chat_message">Hii Bro</p>
-			</div>
+        <div id="chatbox">
+        	<input id="handle" type="text" placeholder="Username"/>
+            <div id="chat-window">
+                <div id="output"></div>
+                <div id="feedback"></div>
+            </div>
+            
+            <input id="message" type="message" placeholder="Enter Your Message"/>
+            <button id="send">Send</button>
+        </div>
 
-			<div class ="chat friend">
-				<div class ="user_photo"><img src="../img/friend.jpg"></div>
-				<p class="chat_message">What's up, Bro!!</p>
-			</div>
-			<div class ="chat self">
-				<div class ="user_photo"><img src="img/self.jpeg"></div>
-				<p class="chat_message">What's up!!</p>
-			</div>
+        <div class="footer">v 1.0 | Build 2017 | <u><a href="info.html" style="color: #16a085"> Developer </a></u></div>
 
-			<div class ="chat friend">
-				<div class ="user_photo"><img src="img/friend.jpg"></div>
-				<p class="chat_message">What's up, Bro!!</p>
-			</div>
-			<div class ="chat self">
-				<div class ="user_photo"><img src="img/self.jpeg"></div>
-				<p class="chat_message">What's up!!</p>
-			</div>
-
-			<div class ="chat friend">
-				<div class ="user_photo"><img src="img/friend.jpg"></div>
-				<p class="chat_message">What's up, Bro!!</p>
-			</div>
-			<div class ="chat self">
-				<div class ="user_photo"><img src="img/self.jpeg"></div>
-				<p class="chat_message">What's up!!</p>
-			</div>
-
-			<div class ="chat friend">
-				<div class ="user_photo"><img src="img/friend.jpg"></div>
-				<p class="chat_message">What's up, Bro!!</p>
-			</div>
-			<div class ="chat self">
-				<div class ="user_photo"><img src="img/self.jpeg"></div>
-				<p class="chat_message">What's up!!</p>
-			</div>
-		
-		</div>
-
-		<div class="chat_form">
-			<textarea placeholder="Enter your Message" id = 'theMsg'></textarea>
-			<button>Send</button>
-		</div>
-	</div>
-
-
-	<script src = "http://code.jquery.com/jquery-latest.min.js"></script>
-	<script src = "https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
-	<script>
-		jQuery(function($){
-			var socket = io.connect();
-			var $messageForm = $('#chatlogs');
-			var $messagebox = $('#theMsg');
-			var $chat = $('#chat');
-
-			$messageForm.submit(function(e){
-				e.preventDefault();
-				socket.emit('send message',$messagebox.val());
-				$messagebox.val('');
-			});
-
-		});
-	</script>
-</body>
+        <script src="/chat.js"></script>
+    </body>
 </html>
