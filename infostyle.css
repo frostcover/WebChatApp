@@ -1,0 +1,65 @@
+html
+{
+    font-family: Roboto;
+}
+body
+{
+    margin: 0px;
+    display: inline-block;
+    font-family: "Quicksand","Roboto","Arial",sans-serif;
+    background: url(back.jpg);
+    background-color: #0b1c25;
+    background-size: cover;
+}
+a{
+    text-decoration: none;
+}
+
+.name
+{   
+    text-align: center;
+    font-size: 29pt;
+    font-weight: 300;
+    margin-top: 9px;
+}
+.pic
+{
+    background-image: url(self.jpeg);
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    border-radius: 10000px;
+    float: left;
+    margin: 15px 70px;
+    background-color: #8d8d8d;
+}
+.subname
+{   
+    text-align:center;
+    color: rgba(0, 0, 0);
+    margin-bottom: 15px
+}
+
+.card
+{
+	margin-left: 20px;
+	margin-top: 80px;
+    width: 300px;
+    height: 365px;
+    background-color: rgba(0,0,0, 0.19);
+    border-radius: 5px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+.title
+{
+    background-color: rgba(255, 255, 255, 0.55);
+    padding: 7px 12px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+img{
+    margin-left: 27px;
+	height: 60px;
+	width: 60px;
+}
